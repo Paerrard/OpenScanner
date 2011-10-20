@@ -1,0 +1,966 @@
+2011-10-18T15:38:51+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-18T15:38:51+02:00 CRIT (2): array
+2011-10-18T15:38:51+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:38:51+02:00 NOTICE (5): array
+2011-10-18T15:39:08+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:39:08+02:00 NOTICE (5): array
+2011-10-18T15:44:05+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:44:05+02:00 NOTICE (5): array
+2011-10-18T15:44:12+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:44:12+02:00 NOTICE (5): array
+2011-10-18T15:44:14+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:44:14+02:00 NOTICE (5): array
+2011-10-18T15:44:21+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:44:21+02:00 NOTICE (5): array
+2011-10-18T15:45:17+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:45:17+02:00 NOTICE (5): array
+2011-10-18T15:45:17+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:45:17+02:00 NOTICE (5): array
+2011-10-18T15:45:18+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:45:18+02:00 NOTICE (5): array
+2011-10-18T15:45:18+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:45:18+02:00 NOTICE (5): array
+2011-10-18T15:45:18+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:45:18+02:00 NOTICE (5): array
+2011-10-18T15:45:18+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:45:18+02:00 NOTICE (5): array
+2011-10-18T15:46:10+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:46:10+02:00 NOTICE (5): array
+2011-10-18T15:48:11+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:48:11+02:00 NOTICE (5): array
+2011-10-18T15:48:12+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:48:12+02:00 NOTICE (5): array
+2011-10-18T15:49:15+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:15+02:00 NOTICE (5): array
+2011-10-18T15:49:16+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:16+02:00 NOTICE (5): array
+2011-10-18T15:49:17+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:17+02:00 NOTICE (5): array
+2011-10-18T15:49:17+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:17+02:00 NOTICE (5): array
+2011-10-18T15:49:21+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:21+02:00 NOTICE (5): array
+2011-10-18T15:49:26+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:26+02:00 NOTICE (5): array
+2011-10-18T15:49:30+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:30+02:00 NOTICE (5): array
+2011-10-18T15:49:32+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:32+02:00 NOTICE (5): array
+2011-10-18T15:49:38+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:38+02:00 NOTICE (5): array
+2011-10-18T15:49:39+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T15:49:39+02:00 NOTICE (5): array
+2011-10-18T16:27:24+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T16:27:24+02:00 NOTICE (5): array
+2011-10-18T17:08:22+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T17:08:22+02:00 NOTICE (5): array
+2011-10-18T17:08:22+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T17:08:22+02:00 NOTICE (5): array
+2011-10-18T17:19:43+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (images)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-18T17:19:43+02:00 NOTICE (5): array
+2011-10-19T09:29:04+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:04+02:00 CRIT (2): array
+2011-10-19T09:29:05+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:05+02:00 CRIT (2): array
+2011-10-19T09:29:05+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:05+02:00 CRIT (2): array
+2011-10-19T09:29:05+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:05+02:00 CRIT (2): array
+2011-10-19T09:29:06+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:06+02:00 CRIT (2): array
+2011-10-19T09:29:06+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:06+02:00 CRIT (2): array
+2011-10-19T09:29:27+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:27+02:00 CRIT (2): array
+2011-10-19T09:29:28+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:28+02:00 CRIT (2): array
+2011-10-19T09:29:28+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:28+02:00 CRIT (2): array
+2011-10-19T09:29:35+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /var/www/zend/public/index.php(64): Zend_Application->run()
+#17 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /var/www/zend/application/Core/controllers/IndexController.php(23): Zend_Session_Namespace->__construct('test')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): IndexController->indexAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('indexAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+2011-10-19T09:29:35+02:00 CRIT (2): array
+2011-10-19T12:29:49+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (fr)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-19T12:29:49+02:00 NOTICE (5): array
+2011-10-19T15:24:49+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (index.html)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-19T15:24:49+02:00 NOTICE (5): array
+2011-10-19T15:25:11+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (index.html)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-19T15:25:11+02:00 NOTICE (5): array
+2011-10-19T15:25:11+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (index.html)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-19T15:25:11+02:00 NOTICE (5): array
+2011-10-19T15:25:11+02:00 NOTICE (5): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (index.html)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php:248
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /var/www/zend/public/index.php(64): Zend_Application->run()
+#4 {main}
+2011-10-19T15:25:11+02:00 NOTICE (5): array
+2011-10-20T09:27:08+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Storage/Session.php(87): Zend_Session_Namespace->__construct('Zend_Auth')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(91): Zend_Auth_Storage_Session->__construct()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(141): Zend_Auth->getStorage()
+#13 /var/www/zend/application/Core/plugins/Auth.php(8): Zend_Auth->hasIdentity()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Plugin/Broker.php(287): Core_Plugin_Auth->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(928): Zend_Controller_Plugin_Broker->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#16 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#17 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#18 /var/www/zend/public/index.php(64): Zend_Application->run()
+#19 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Storage/Session.php(87): Zend_Session_Namespace->__construct('Zend_Auth')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(91): Zend_Auth_Storage_Session->__construct()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(141): Zend_Auth->getStorage()
+#12 /var/www/zend/application/Core/plugins/Auth.php(8): Zend_Auth->hasIdentity()
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Plugin/Broker.php(287): Core_Plugin_Auth->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(928): Zend_Controller_Plugin_Broker->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#16 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#17 /var/www/zend/public/index.php(64): Zend_Application->run()
+#18 {main}
+2011-10-20T09:27:08+02:00 CRIT (2): array
+2011-10-20T09:41:11+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=127....', 'app1', '0000', Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#6 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#7 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Storage/Session.php(87): Zend_Session_Namespace->__construct('Zend_Auth')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(91): Zend_Auth_Storage_Session->__construct()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(141): Zend_Auth->getStorage()
+#13 /var/www/zend/application/Core/plugins/Auth.php(8): Zend_Auth->hasIdentity()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Plugin/Broker.php(287): Core_Plugin_Auth->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(928): Zend_Controller_Plugin_Broker->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#16 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#17 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#18 /var/www/zend/public/index.php(64): Zend_Application->run()
+#19 {main}
+
+Next exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'app1'@'localhost' (using password: YES)' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Mysql.php(109): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(459): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('DELETE FROM `se...', Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(663): Zend_Db_Adapter_Pdo_Abstract->query('DELETE FROM `se...')
+#4 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(97): Zend_Db_Adapter_Abstract->delete('session', 'sess_time < DAT...')
+#5 /var/www/zend/library/Ip/Session/SaveHandler/Db.php(42): Ip_Session_SaveHandler_Db->gc('3600')
+#6 [internal function]: Ip_Session_SaveHandler_Db->open('/var/www/zend/a...', 'analyticsToken')
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session.php(469): session_start()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Session/Namespace.php(143): Zend_Session::start(true)
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Storage/Session.php(87): Zend_Session_Namespace->__construct('Zend_Auth')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(91): Zend_Auth_Storage_Session->__construct()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(141): Zend_Auth->getStorage()
+#12 /var/www/zend/application/Core/plugins/Auth.php(8): Zend_Auth->hasIdentity()
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Plugin/Broker.php(287): Core_Plugin_Auth->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(928): Zend_Controller_Plugin_Broker->dispatchLoopStartup(Object(Zend_Controller_Request_Http))
+#15 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#16 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#17 /var/www/zend/public/index.php(64): Zend_Application->run()
+#18 {main}
+2011-10-20T09:41:11+02:00 CRIT (2): array
+2011-10-20T09:55:04+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zend.users' doesn't exist' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement.php(300): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(736): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select), Array)
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(480): Zend_Db_Adapter_Abstract->fetchAll(Object(Zend_Db_Select))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#8 /var/www/zend/application/Core/controllers/AuthController.php(34): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#14 /var/www/zend/public/index.php(64): Zend_Application->run()
+#15 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zend.users' doesn't exist' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement.php(300): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(736): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(480): Zend_Db_Adapter_Abstract->fetchAll(Object(Zend_Db_Select))
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#7 /var/www/zend/application/Core/controllers/AuthController.php(34): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#13 /var/www/zend/public/index.php(64): Zend_Application->run()
+#14 {main}
+
+Next exception 'Zend_Auth_Adapter_Exception' with message 'The supplied parameters to Zend_Auth_Adapter_DbTable failed to produce a valid sql statement, please check table and column names for validity.' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php:490
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#2 /var/www/zend/application/Core/controllers/AuthController.php(34): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /var/www/zend/public/index.php(64): Zend_Application->run()
+#9 {main}
+2011-10-20T09:55:04+02:00 CRIT (2): array
+2011-10-20T09:55:33+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zend.zend' doesn't exist' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement.php(300): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(736): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select), Array)
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(480): Zend_Db_Adapter_Abstract->fetchAll(Object(Zend_Db_Select))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#8 /var/www/zend/application/Core/controllers/AuthController.php(34): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#14 /var/www/zend/public/index.php(64): Zend_Application->run()
+#15 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zend.zend' doesn't exist' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement.php(300): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(736): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(480): Zend_Db_Adapter_Abstract->fetchAll(Object(Zend_Db_Select))
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#7 /var/www/zend/application/Core/controllers/AuthController.php(34): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#13 /var/www/zend/public/index.php(64): Zend_Application->run()
+#14 {main}
+
+Next exception 'Zend_Auth_Adapter_Exception' with message 'The supplied parameters to Zend_Auth_Adapter_DbTable failed to produce a valid sql statement, please check table and column names for validity.' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php:490
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#2 /var/www/zend/application/Core/controllers/AuthController.php(34): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /var/www/zend/public/index.php(64): Zend_Application->run()
+#9 {main}
+2011-10-20T09:55:33+02:00 CRIT (2): array
+2011-10-20T13:50:52+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zend.user' doesn't exist' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php:228
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php(228): PDOStatement->execute(Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement.php(300): Zend_Db_Statement_Pdo->_execute(Array)
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(736): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select), Array)
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(480): Zend_Db_Adapter_Abstract->fetchAll(Object(Zend_Db_Select))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#8 /var/www/zend/application/Core/services/User.php(36): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#9 /var/www/zend/application/Core/controllers/AuthController.php(21): Core_Service_User->authenticate('erer', 'rerere')
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#15 /var/www/zend/public/index.php(64): Zend_Application->run()
+#16 {main}
+
+Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zend.user' doesn't exist' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement/Pdo.php:234
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Statement.php(300): Zend_Db_Statement_Pdo->_execute(Array)
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Select), Array)
+#3 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Db/Adapter/Abstract.php(736): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Select), Array)
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(480): Zend_Db_Adapter_Abstract->fetchAll(Object(Zend_Db_Select))
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#7 /var/www/zend/application/Core/services/User.php(36): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#8 /var/www/zend/application/Core/controllers/AuthController.php(21): Core_Service_User->authenticate('erer', 'rerere')
+#9 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#10 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#11 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#12 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#13 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#14 /var/www/zend/public/index.php(64): Zend_Application->run()
+#15 {main}
+
+Next exception 'Zend_Auth_Adapter_Exception' with message 'The supplied parameters to Zend_Auth_Adapter_DbTable failed to produce a valid sql statement, please check table and column names for validity.' in /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php:490
+Stack trace:
+#0 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth/Adapter/DbTable.php(369): Zend_Auth_Adapter_DbTable->_authenticateQuerySelect(Object(Zend_Db_Select))
+#1 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Auth.php(117): Zend_Auth_Adapter_DbTable->authenticate()
+#2 /var/www/zend/application/Core/services/User.php(36): Zend_Auth->authenticate(Object(Zend_Auth_Adapter_DbTable))
+#3 /var/www/zend/application/Core/controllers/AuthController.php(21): Core_Service_User->authenticate('erer', 'rerere')
+#4 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Action.php(516): AuthController->loginAction()
+#5 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Dispatcher/Standard.php(295): Zend_Controller_Action->dispatch('loginAction')
+#6 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Controller/Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#7 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#8 /usr/local/zend/share/ZendFramework-1.11.10-minimal/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#9 /var/www/zend/public/index.php(64): Zend_Application->run()
+#10 {main}
+2011-10-20T13:50:52+02:00 CRIT (2): array
